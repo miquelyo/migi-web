@@ -7,20 +7,11 @@
 export const SITE = {
   name: 'Migi',
 
-  /** Link tombol "Download". Ganti dengan link GitHub Releases kamu. */
-  downloadUrl: 'https://github.com/USERNAME/migi/releases/latest',
-
-  /** Repo GitHub (dipakai untuk tombol feedback → Issues). Kosongkan '' untuk menyembunyikan. */
-  githubUrl: 'https://github.com/USERNAME/migi',
-
-  /** Versi terbaru. Kosongkan '' kalau belum mau ditampilkan. Contoh: '1.0.0' */
-  version: '',
-
-  /** Ukuran download. Kosongkan '' kalau belum mau ditampilkan. Contoh: '8 MB' */
-  size: '',
-
-  /** SHA-256 dari installer (opsional). Kosongkan '' untuk menyembunyikan. */
-  sha256: '',
+  downloadUrl: 'https://github.com/miquelyo/migi-web/releases/latest',
+  githubUrl: 'https://github.com/miquelyo/migi-web',
+  version: '1.0.0',
+  size: '1,61 MB',   // sesuaikan dengan ukuran file installer
+  sha256: '',     // opsional, lihat di bawah
 
   /** Link donasi. Yang url-nya '' tidak akan ditampilkan; kalau semuanya kosong, section Support disembunyikan. */
   support: [
