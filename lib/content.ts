@@ -1,0 +1,271 @@
+export type Lang = 'en' | 'id';
+
+export type IconKey =
+  | 'music' | 'lyrics' | 'weather' | 'timer' | 'calendar'
+  | 'battery' | 'bluetooth' | 'mini';
+
+const en = {
+  nav: {
+    preview: 'Preview', features: 'Features', light: 'Under the hood',
+    customize: 'Customize', download: 'Download', faq: 'FAQ', support: 'Support',
+  },
+  hero: {
+    badge: 'Now for Windows 10 and 11',
+    title1: 'The top of your screen,',
+    title2: 'alive.',
+    sub: 'Migi turns the top edge of Windows into a small notch that shows your music, synced lyrics, weather and timers, then quietly gets out of the way.',
+    cta: 'Download for Windows',
+    cta2: 'See how it works',
+    hintHover: 'Hover the notch to open it. Pick a scene below to see what else it does.',
+    hintTouch: 'Tap the notch to open it. Pick a scene below to see what else it does.',
+    auto: 'Auto',
+  },
+  scenes: {
+    idle: 'Resting', music: 'Music', lyric: 'Lyrics', battery: 'Charging',
+    bluetooth: 'Headphones', eyes: 'Mascot', greet: 'Hello!', mini: 'Minimal',
+  },
+  features: {
+    title: 'Everything you glance at, in one place.',
+    sub: 'Hover the notch to open it. Move away and it closes. Nothing to arrange, nothing to pin.',
+    items: [
+      { icon: 'music' as IconKey, title: 'Music from any player', text: 'Spotify, YouTube in your browser and other players that show up in Windows media controls: see what is playing, skip and pause without switching windows.' },
+      { icon: 'lyrics' as IconKey, title: 'Synced lyrics', text: 'Tap the lyrics button and the notch splits in two. A slim lyric pill keeps following the song even after you move your mouse away.' },
+      { icon: 'weather' as IconKey, title: 'Weather at a glance', text: 'Temperature, conditions, humidity and wind for where you are, with no permission prompt. It refreshes on its own every half hour.' },
+      { icon: 'timer' as IconKey, title: 'Stopwatch with laps', text: 'Start, lap and reset right from the notch. It keeps running even after the notch closes.' },
+      { icon: 'calendar' as IconKey, title: 'Calendar strip', text: 'The month and this week at a glance, with today highlighted.' },
+      { icon: 'battery' as IconKey, title: 'Charging popup', text: 'Plug in or unplug the charger and the notch shows your battery level in a smooth animated ring.' },
+      { icon: 'bluetooth' as IconKey, title: 'Headphone popup', text: 'A quick peek when a Bluetooth device connects or disconnects, with its name.' },
+      { icon: 'mini' as IconKey, title: 'Steps aside', text: 'When an app is maximized, a closed notch shrinks into a thin line so it never gets in the way. Music and alerts still show up.' },
+    ],
+  },
+  mascot: {
+    title: 'A small companion that knows when to rest.',
+    text: 'When your mouse has been still for a while, the clock fades and a pair of eyes appears. They blink now and then, and wave hello the moment you move again.',
+    cap1: 'Resting', cap2: 'You are back',
+  },
+  tech: {
+    title: 'Light, and quick to react.',
+    sub: 'Migi is built with Tauri and Rust. The notch is a small transparent window that only catches the mouse where the notch actually is, so the rest of your screen stays fully clickable.',
+    items: [
+      { title: 'Rust does the listening.', text: 'The Rust side tells Migi when the song changes or the mouse moves, instead of the interface checking over and over.' },
+      { title: 'Click-through window.', text: 'The window ignores the mouse everywhere except the notch. Its hover area resizes together with the notch.' },
+      { title: 'Lyrics land on time.', text: 'Song position is calculated live from the last known position, and each line appears a fraction early so it never feels late.' },
+      { title: 'Calm when nothing happens.', text: 'The position tick slows down to once a second, and only speeds up while the lyrics view is open.' },
+    ],
+  },
+  customize: {
+    title: 'Make it yours.',
+    sub: 'Open Settings and flip a few switches. Every change applies right away.',
+    panelTitle: 'Settings',
+    rows: [
+      { key: 'autostart', title: 'Start with Windows', text: 'Migi opens on its own every time you sign in, so the notch is always there. It is switched on the first time you run it, and you can turn it off anytime.' },
+      { key: 'mascot', title: 'Mascot', text: 'The eyes that appear when your PC has been quiet for a moment, and wave hello when you come back.' },
+      { key: 'lyrics', title: 'Lyrics', text: 'Look up synced lyrics for the song that is playing. Turn it off and no lyric lookups are made.' },
+      { key: 'battery', title: 'Charging popup', text: 'Show the battery ring when you plug in or unplug the charger.' },
+      { key: 'eyes', title: 'Eyes while playing', text: 'Choose whether the mascot may appear while music is playing.' },
+    ],
+    pagesTitle: 'Pages',
+    pagesText: 'Choose which pages show up when you open the notch. Hide what you do not use and the rest stays tidy.',
+    pages: { media: 'Music', weather: 'Weather', stopwatch: 'Stopwatch', calendar: 'Calendar' },
+    idleTitle: 'Rest delay',
+    idleText: 'How many seconds the mouse must be still before the eyes appear.',
+    seconds: 's',
+  },
+  download: {
+    title: 'Get Migi for Windows',
+    sub: 'Windows 10 or Windows 11.',
+    button: 'Download Migi',
+    versionLabel: 'Version',
+    shaLabel: 'SHA-256',
+    noAdmin: 'Free to download. Uninstall anytime from Windows Settings.',
+    warnTitle: 'Windows showed a warning?',
+    warnText: 'Migi is a new app made by one independent developer. Windows may not have seen it downloaded many times yet, so it can show a caution message. Here is how to continue.',
+    step1Title: 'In your browser',
+    step1: ['In your downloads, click See more (or the three dots) next to the file.', 'Choose Keep.', 'If asked again, choose Keep anyway.'],
+    step2Title: 'When you open it',
+    step2: ['If Windows says "Windows protected your PC", click More info.', 'Click Run anyway.', 'Follow the installer. Migi appears at the top of your screen.'],
+    trustTitle: 'Why you can trust it',
+    trust: [
+      'No account needed and no analytics in the app.',
+      'Your settings stay on your computer.',
+      'Only two kinds of lookups leave your PC: lyrics from LRCLIB, and weather from Open-Meteo. The details are in the Privacy section below.',
+      'Only download Migi from this page.',
+    ],
+  },
+  support: {
+    title: 'Keep Migi going.',
+    text: 'If Migi makes your day a little better, you can buy me a coffee. It helps me keep building new features.',
+  },
+  feedback: {
+    title: 'Tell me what you think.',
+    text: 'Found a bug, or have an idea for a feature? I read every message.',
+    button: 'Send feedback',
+  },
+  note: {
+    title: 'An honest note.',
+    by: 'From the person behind Migi',
+    p1: 'Migi is a personal project, built by one person in their spare time. This is an early version, so you may run into bugs, and some laptops may behave a little differently from mine.',
+    p2: 'If something breaks, please tell me and I will keep improving it.',
+    p3: 'Only download Migi from this page. If you got the file anywhere else, please do not run it.',
+    p4: 'Migi is provided "as is", without warranties of any kind. As far as the law allows, I am not responsible for any loss or damage from using Migi or from files obtained from other sources.',
+  },
+  faq: {
+    title: 'Questions',
+    items: [
+      { q: 'Is Migi free?', a: 'Migi is free to download right now. If that ever changes, it will be announced on this page first.' },
+      { q: 'Which music players work?', a: 'Players that show up in the Windows media controls: Spotify, most players in Chrome, Edge and Firefox including YouTube, and many desktop players.' },
+      { q: 'Why does a song have no lyrics?', a: 'Lyrics come from LRCLIB, a free community library. Popular songs usually have synced lyrics; local or very new songs may not yet. When nothing is found, the notch shows the song title instead.' },
+      { q: 'Will it slow down my PC?', a: 'Migi is built with Tauri and Rust, and is designed to do very little while nothing changes. It reacts to events from Windows instead of constantly checking.' },
+      { q: 'Where does the weather come from?', a: 'Migi estimates your location from your IP address and asks Open-Meteo for the current weather. No location permission is requested, and it refreshes every 30 minutes.' },
+      { q: 'How do I stop it from starting with Windows?', a: 'Turn off "Start with Windows" in Migi Settings. You can also disable it in Windows Settings, under Apps, then Startup.' },
+    ],
+  },
+  privacy: {
+    title: 'Privacy',
+    p1: 'Migi has no accounts and no analytics. Your settings are saved only on your computer.',
+    p2: 'When lyrics are on, Migi sends the song title and artist to LRCLIB (lrclib.net) to find matching lyrics.',
+    p3: 'For weather, Migi asks ipapi.co for your approximate location based on your IP address, then sends those coordinates to Open-Meteo (open-meteo.com) to get the current conditions.',
+    p4: 'Nothing else leaves your computer.',
+  },
+  footer: {
+    rights: '© 2026 Migi.',
+    credits: 'Lyrics by',
+    weather: 'Weather by',
+  },
+  toast: 'Thanks for downloading Migi!',
+};
+
+export type Content = typeof en;
+
+const id: Content = {
+  nav: {
+    preview: 'Pratinjau', features: 'Fitur', light: 'Di balik layar',
+    customize: 'Atur', download: 'Unduh', faq: 'FAQ', support: 'Dukung',
+  },
+  hero: {
+    badge: 'Kini untuk Windows 10 dan 11',
+    title1: 'Bagian atas layarmu,',
+    title2: 'jadi hidup.',
+    sub: 'Migi mengubah tepi atas Windows menjadi notch kecil yang menampilkan musik, lirik tersinkron, cuaca, dan timer, lalu diam-diam minggir saat tidak dibutuhkan.',
+    cta: 'Unduh untuk Windows',
+    cta2: 'Lihat cara kerjanya',
+    hintHover: 'Arahkan kursor ke notch untuk membukanya. Pilih scene di bawah untuk lihat fitur lainnya.',
+    hintTouch: 'Ketuk notch untuk membukanya. Pilih scene di bawah untuk lihat fitur lainnya.',
+    auto: 'Otomatis',
+  },
+  scenes: {
+    idle: 'Diam', music: 'Musik', lyric: 'Lirik', battery: 'Mengisi daya',
+    bluetooth: 'Headphone', eyes: 'Maskot', greet: 'Halo!', mini: 'Minimal',
+  },
+  features: {
+    title: 'Semua yang kamu lirik, di satu tempat.',
+    sub: 'Arahkan kursor ke notch untuk membukanya. Jauhkan kursor dan notch menutup lagi. Tidak ada yang perlu ditata atau di-pin.',
+    items: [
+      { icon: 'music', title: 'Musik dari pemutar apa pun', text: 'Spotify, YouTube di browser, dan pemutar lain yang muncul di kontrol media Windows: lihat lagu yang sedang diputar, lewati, dan jeda tanpa pindah jendela.' },
+      { icon: 'lyrics', title: 'Lirik tersinkron', text: 'Ketuk tombol lirik dan notch terbelah dua. Pil lirik tipis tetap mengikuti lagu bahkan setelah kursor kamu menjauh.' },
+      { icon: 'weather', title: 'Cuaca sekilas', text: 'Suhu, kondisi, kelembapan, dan angin di lokasimu, tanpa meminta izin. Diperbarui otomatis setiap setengah jam.' },
+      { icon: 'timer', title: 'Stopwatch dengan lap', text: 'Mulai, lap, dan reset langsung dari notch. Tetap berjalan walau notch sudah menutup.' },
+      { icon: 'calendar', title: 'Kalender mingguan', text: 'Bulan dan minggu ini sekilas, dengan hari ini ditandai.' },
+      { icon: 'battery', title: 'Popup pengisian daya', text: 'Colok atau cabut charger dan notch menampilkan level baterai dalam cincin animasi yang halus.' },
+      { icon: 'bluetooth', title: 'Popup headphone', text: 'Intip cepat saat perangkat Bluetooth terhubung atau terputus, lengkap dengan namanya.' },
+      { icon: 'mini', title: 'Tahu kapan minggir', text: 'Saat aplikasi di-maximize, notch yang tertutup mengecil jadi garis tipis agar tidak mengganggu. Musik dan notifikasi tetap muncul.' },
+    ],
+  },
+  mascot: {
+    title: 'Teman kecil yang tahu kapan harus istirahat.',
+    text: 'Saat mouse kamu diam beberapa saat, jam memudar dan sepasang mata muncul. Mereka berkedip sesekali, dan melambai begitu kamu menggerakkan mouse lagi.',
+    cap1: 'Istirahat', cap2: 'Kamu kembali',
+  },
+  tech: {
+    title: 'Ringan, dan cepat bereaksi.',
+    sub: 'Migi dibuat dengan Tauri dan Rust. Notch-nya adalah jendela transparan kecil yang hanya menangkap mouse di tempat notch berada, jadi sisa layarmu tetap bisa diklik sepenuhnya.',
+    items: [
+      { title: 'Rust yang mendengarkan.', text: 'Sisi Rust memberi tahu Migi saat lagu berganti atau mouse bergerak, bukan tampilan yang terus-menerus mengecek.' },
+      { title: 'Jendela tembus klik.', text: 'Jendela mengabaikan mouse di mana pun kecuali di notch. Area hover-nya ikut berubah ukuran bersama notch.' },
+      { title: 'Lirik tepat waktu.', text: 'Posisi lagu dihitung langsung dari posisi terakhir yang diketahui, dan tiap baris muncul sedikit lebih awal agar tidak terasa telat.' },
+      { title: 'Tenang saat tidak ada apa-apa.', text: 'Pembaruan posisi melambat jadi sekali per detik, dan hanya mempercepat saat tampilan lirik terbuka.' },
+    ],
+  },
+  customize: {
+    title: 'Atur sesukamu.',
+    sub: 'Buka Settings dan nyalakan atau matikan beberapa pilihan. Setiap perubahan langsung berlaku.',
+    panelTitle: 'Settings',
+    rows: [
+      { key: 'autostart', title: 'Start with Windows', text: 'Migi terbuka sendiri setiap kamu masuk, jadi notch selalu ada. Aktif otomatis saat pertama kali dijalankan, dan bisa dimatikan kapan saja.' },
+      { key: 'mascot', title: 'Maskot', text: 'Mata yang muncul saat PC kamu sedang tenang, dan melambai saat kamu kembali.' },
+      { key: 'lyrics', title: 'Lirik', text: 'Cari lirik tersinkron untuk lagu yang sedang diputar. Kalau dimatikan, tidak ada pencarian lirik.' },
+      { key: 'battery', title: 'Popup pengisian daya', text: 'Tampilkan cincin baterai saat charger dicolok atau dicabut.' },
+      { key: 'eyes', title: 'Mata saat musik main', text: 'Pilih apakah maskot boleh muncul ketika musik sedang diputar.' },
+    ],
+    pagesTitle: 'Halaman',
+    pagesText: 'Pilih halaman apa saja yang muncul saat notch dibuka. Sembunyikan yang tidak kamu pakai agar tetap rapi.',
+    pages: { media: 'Musik', weather: 'Cuaca', stopwatch: 'Stopwatch', calendar: 'Kalender' },
+    idleTitle: 'Jeda istirahat',
+    idleText: 'Berapa detik mouse harus diam sebelum mata muncul.',
+    seconds: 'dtk',
+  },
+  download: {
+    title: 'Dapatkan Migi untuk Windows',
+    sub: 'Windows 10 atau Windows 11.',
+    button: 'Unduh Migi',
+    versionLabel: 'Versi',
+    shaLabel: 'SHA-256',
+    noAdmin: 'Gratis diunduh. Copot kapan saja lewat Pengaturan Windows.',
+    warnTitle: 'Windows menampilkan peringatan?',
+    warnText: 'Migi adalah aplikasi baru buatan satu pengembang independen. Windows mungkin belum sering melihatnya diunduh, jadi bisa muncul pesan peringatan. Begini cara melanjutkan.',
+    step1Title: 'Di browser',
+    step1: ['Di daftar unduhan, klik Lihat selengkapnya (atau titik tiga) di samping file.', 'Pilih Simpan (Keep).', 'Jika ditanya lagi, pilih Tetap simpan (Keep anyway).'],
+    step2Title: 'Saat membukanya',
+    step2: ['Jika Windows menampilkan "Windows protected your PC", klik More info.', 'Klik Run anyway.', 'Ikuti installer. Migi akan muncul di bagian atas layarmu.'],
+    trustTitle: 'Kenapa aman dipercaya',
+    trust: [
+      'Tanpa akun dan tanpa analitik di dalam aplikasi.',
+      'Pengaturanmu tersimpan di komputermu sendiri.',
+      'Hanya dua jenis permintaan yang keluar dari PC: lirik dari LRCLIB, dan cuaca dari Open-Meteo. Rinciannya ada di bagian Privasi di bawah.',
+      'Unduh Migi hanya dari halaman ini.',
+    ],
+  },
+  support: {
+    title: 'Bantu Migi terus berjalan.',
+    text: 'Kalau Migi membuat harimu sedikit lebih baik, kamu bisa traktir saya kopi. Itu membantu saya terus membuat fitur baru.',
+  },
+  feedback: {
+    title: 'Beri tahu pendapatmu.',
+    text: 'Menemukan bug, atau punya ide fitur? Saya baca setiap pesan.',
+    button: 'Kirim masukan',
+  },
+  note: {
+    title: 'Catatan jujur.',
+    by: 'Dari orang di balik Migi',
+    p1: 'Migi adalah proyek pribadi, dibuat oleh satu orang di waktu luangnya. Ini versi awal, jadi kamu mungkin menemukan bug, dan beberapa laptop bisa berperilaku sedikit berbeda dari laptop saya.',
+    p2: 'Kalau ada yang rusak, tolong kabari saya dan saya akan terus memperbaikinya.',
+    p3: 'Unduh Migi hanya dari halaman ini. Kalau kamu mendapat file dari tempat lain, tolong jangan dijalankan.',
+    p4: 'Migi disediakan "apa adanya", tanpa jaminan apa pun. Sejauh diizinkan hukum, saya tidak bertanggung jawab atas kerugian atau kerusakan akibat memakai Migi atau file dari sumber lain.',
+  },
+  faq: {
+    title: 'Pertanyaan',
+    items: [
+      { q: 'Apakah Migi gratis?', a: 'Saat ini Migi gratis diunduh. Kalau suatu saat berubah, akan diumumkan di halaman ini lebih dulu.' },
+      { q: 'Pemutar musik apa yang didukung?', a: 'Pemutar yang muncul di kontrol media Windows: Spotify, kebanyakan pemutar di Chrome, Edge, dan Firefox termasuk YouTube, serta banyak pemutar desktop.' },
+      { q: 'Kenapa lagu tertentu tidak ada liriknya?', a: 'Lirik berasal dari LRCLIB, perpustakaan komunitas gratis. Lagu populer biasanya punya lirik tersinkron; lagu lokal atau yang sangat baru mungkin belum. Kalau tidak ketemu, notch menampilkan judul lagu.' },
+      { q: 'Apakah memperlambat PC?', a: 'Migi dibuat dengan Tauri dan Rust, dan dirancang melakukan sangat sedikit saat tidak ada yang berubah. Ia bereaksi pada kejadian dari Windows, bukan mengecek terus-menerus.' },
+      { q: 'Cuaca datang dari mana?', a: 'Migi memperkirakan lokasimu dari alamat IP lalu meminta cuaca terkini ke Open-Meteo. Tidak ada izin lokasi yang diminta, dan diperbarui setiap 30 menit.' },
+      { q: 'Bagaimana menghentikannya agar tidak jalan bersama Windows?', a: 'Matikan "Start with Windows" di Settings Migi. Kamu juga bisa menonaktifkannya di Pengaturan Windows, bagian Apps lalu Startup.' },
+    ],
+  },
+  privacy: {
+    title: 'Privasi',
+    p1: 'Migi tidak punya akun dan tidak punya analitik. Pengaturanmu hanya tersimpan di komputermu.',
+    p2: 'Saat lirik aktif, Migi mengirim judul dan artis lagu ke LRCLIB (lrclib.net) untuk mencari lirik yang cocok.',
+    p3: 'Untuk cuaca, Migi meminta ipapi.co memperkirakan lokasimu dari alamat IP, lalu mengirim koordinat itu ke Open-Meteo (open-meteo.com) untuk mendapatkan kondisi terkini.',
+    p4: 'Tidak ada hal lain yang keluar dari komputermu.',
+  },
+  footer: {
+    rights: '© 2026 Migi.',
+    credits: 'Lirik oleh',
+    weather: 'Cuaca oleh',
+  },
+  toast: 'Terima kasih sudah mengunduh Migi!',
+};
+
+export const content: Record<Lang, Content> = { en, id };
