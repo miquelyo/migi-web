@@ -7,7 +7,7 @@
 export const SITE = {
   name: 'Migi',
 
-  downloadUrl: 'https://github.com/miquelyo/migi-web/releases/latest',
+downloadUrl: 'https://github.com/miquelyo/migi-web/releases/latest/download/Migi_1.0.0_x64-setup.exe',
   githubUrl: 'https://github.com/miquelyo/migi-web',
   version: '1.0.0',
   size: '1,61 MB',   // sesuaikan dengan ukuran file installer
